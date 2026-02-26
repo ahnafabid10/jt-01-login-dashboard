@@ -5,6 +5,7 @@ import { createBrowserRouter } from "react-router";
 import { RouterProvider } from "react-router/dom";
 import Login from "./Login/Login"
 import DashBoard from './DashBoard/DashBoard';
+import DashBoardLayout from './DashBoard/DashboardLayout';
 
 const router = createBrowserRouter([
   {
@@ -13,12 +14,18 @@ const router = createBrowserRouter([
   },
   {
     path: '/dashboard',
-    element: <DashBoard></DashBoard>
+    element: <DashBoardLayout></DashBoardLayout>,
+    children: [
+      {
+        index: true,
+        element: <DashBoard></DashBoard>
+      }
+    ]
   }
 ]);
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={router} />,
-  </StrictMode>,
+    <RouterProvider router={router} />
+  </StrictMode>
 )
