@@ -97,7 +97,7 @@ export default function SidebarNavbar() {
       <div className="flex-1 flex flex-col overflow-hidden">
         <DBNavBar></DBNavBar>
 
-        <div className="flex-1 p-6 text-black">
+        <div className="flex-1 p-6  text-black">
           <Outlet></Outlet>
         </div>
       </div>

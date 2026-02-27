@@ -1,0 +1,115 @@
+import React, { useState } from 'react';
+import { FiArrowUpRight, FiTrendingUp, FiMessageCircle } from "react-icons/fi";
+
+const ProjectCards = () => {
+      const [selected, setSelected] = useState(1);
+    const cards = [
+  {
+    id: 1,
+    title: "Total Projects",
+    value: 24,
+    sub: "Increased from last month",
+    subIcon: "trend",
+    defaultGreen: true,
+  },
+  {
+    id: 2,
+    title: "Ended Projects",
+    value: 10,
+    sub: "Increased from last month",
+    subIcon: "trend",
+  },
+  {
+    id: 3,
+    title: "Running Projects",
+    value: 12,
+    sub: "Increased from last month",
+    subIcon: "trend",
+  },
+  {
+    id: 4,
+    title: "Pending Project",
+    value: 2,
+    sub: "On Discuss",
+    subIcon: "chat",
+  },
+];
+
+    return (
+        <div>
+             <div className=" flex py-8">
+      <div className="flex items-center justify-between gap-7">
+        {cards.map((card) => {
+          const isSelected = selected === card.id;
+          return (
+            <div
+              key={card.id}
+              onClick={() => setSelected(card.id)}
+              className={`
+                relative cursor-pointer rounded-2xl p-5 w-95 justify-between transition-all duration-300 select-none
+                ${isSelected
+                  ? "bg-green-700 text-white shadow-lg shadow-green-200"
+                  : "bg-white text-gray-800 shadow-sm hover:shadow-md"
+                }
+              `}
+            >
+              <div className="flex items-center justify-between mb-3">
+                <span
+                  className={`text-2xl font-bold leading-tight ${
+                    isSelected ? "text-green-100" : "text-black"
+                  }`}
+                >
+                  {card.title}
+                </span>
+                <span
+                  className={`
+                    flex items-center justify-center w-7 h-7 rounded-full transition-colors duration-300
+                    ${isSelected
+                      ? "bg-green-600 text-white"
+                      : "bg-gray-100 text-gray-400"
+                    }
+                  `}
+                >
+                  <FiArrowUpRight size={14} />
+                </span>
+              </div>
+
+              <div
+                className={`text-4xl font-bold mb-4 ${
+                  isSelected ? "text-white" : "text-gray-800"
+                }`}
+              >
+                {card.value}
+              </div>
+
+              <div className="flex items-center gap-1.5">
+                <span
+                  className={`
+                    flex items-center justify-center w-5 h-5 rounded-full text-4xl
+                    ${isSelected ? "bg-green-600 text-white" : "bg-green-100 text-green-600"}
+                  `}
+                >
+                  {card.subIcon === "trend" ? (
+                    <FiTrendingUp size={10} />
+                  ) : (
+                    <FiMessageCircle size={10} />
+                  )}
+                </span>
+                <span
+                  className={`text-xs ${
+                    isSelected ? "text-green-100" : "text-gray-400"
+                  }`}
+                >
+                  {card.sub}
+                </span>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+        </div>
+    );
+};
+
+export default ProjectCards;

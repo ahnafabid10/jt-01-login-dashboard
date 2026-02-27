@@ -1,10 +1,11 @@
 import React from 'react';
 import { HiPlus } from 'react-icons/hi';
+import ProjectCards from './ProjectCards';
 
 const DashBoard = () => {
     return (
-        <div>
-           <div className="flex flex-col md:flex-row md:items-center rounded-2xl justify-between gap-4 p-6 bg-gray-200">
+        <div className='p-6 bg-gray-200 rounded-2xl'>
+           <div className="flex flex-col md:flex-row md:items-center rounded-2xl justify-between gap-4 ">
       <div>
         <h1 className="text-4xl font-bold text-black">Dashboard</h1>
         <p className="mt-1 text-medium text-gray-600/70">
@@ -22,7 +23,9 @@ const DashBoard = () => {
         </button>
       </div>
     </div>
+    <ProjectCards></ProjectCards>
         </div>
+        
     );
 };
 
