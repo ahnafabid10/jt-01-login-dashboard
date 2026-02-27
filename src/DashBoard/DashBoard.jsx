@@ -2,6 +2,11 @@ import React from 'react';
 import { HiPlus } from 'react-icons/hi';
 import ProjectCards from './ProjectCards';
 import Analysis from './Analysis';
+import ReminderCard from './ReminderCard';
+import Projects from './Projects';
+import Team from './Team';
+import ProjectProcess from './ProjectProcess';
+import TimeTracker from './TimeTraker';
 
 const DashBoard = () => {
     return (
@@ -26,6 +31,11 @@ const DashBoard = () => {
     </div>
     <ProjectCards></ProjectCards>
     <Analysis></Analysis>
+    <ReminderCard></ReminderCard>
+    <Projects></Projects>
+    <Team></Team>
+    <ProjectProcess></ProjectProcess>
+    <TimeTracker></TimeTracker>
         </div>
         
     );

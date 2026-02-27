@@ -21,7 +21,7 @@ export default function SidebarNavbar() {
   const [active, setActive] = useState("Dashboard");
 
   return (
-    <div className="flex h-screen bg-gray-100 font-sans">
+    <div className="flex min-h-screen bg-gray-100 font-sans">
       <aside className="w-52 bg-white flex flex-col justify-between py-6 px-4 shadow-sm shrink-0">
         <div>
           <div className="flex items-center gap-2 mb-8 px-1">
