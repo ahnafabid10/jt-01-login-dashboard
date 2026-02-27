@@ -1,35 +1,48 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { FiArrowUpRight, FiTrendingUp, FiMessageCircle } from "react-icons/fi";
+import UseAxios from '../Hooks/UseAxios';
 
 const ProjectCards = () => {
       const [selected, setSelected] = useState(1);
-    const cards = [
+      const [cardData, setCardData] = useState({})
+
+    const axiosSecure = UseAxios()
+
+    useEffect(()=>{
+      axiosSecure.get('/api/overview')
+      .then(res=> {
+        console.log(res.data);
+        setCardData(res.data)
+      })
+    },[])
+
+        const cards = [
   {
     id: 1,
-    title: "Total Projects",
-    value: 24,
+    title: "Total Users",
+    value: cardData.totalUsers,
     sub: "Increased from last month",
     subIcon: "trend",
     defaultGreen: true,
   },
   {
     id: 2,
-    title: "Ended Projects",
-    value: 10,
+    title: "Active Users",
+    value: cardData.activeUsers,
     sub: "Increased from last month",
     subIcon: "trend",
   },
   {
     id: 3,
-    title: "Running Projects",
-    value: 12,
+    title: "Revenue",
+    value: `$${cardData.revenue}`,
     sub: "Increased from last month",
     subIcon: "trend",
   },
   {
     id: 4,
-    title: "Pending Project",
-    value: 2,
+    title: "Growth",
+    value: `${cardData.growth}%`,
     sub: "On Discuss",
     subIcon: "chat",
   },
@@ -37,6 +50,7 @@ const ProjectCards = () => {
 
     return (
         <div>
+ <div>
              <div className=" flex py-8">
       <div className="flex items-center justify-between gap-7">
         {cards.map((card) => {
@@ -108,6 +122,7 @@ const ProjectCards = () => {
         })}
       </div>
     </div>
+        </div>
         </div>
     );
 };

@@ -1,6 +1,7 @@
 import React from 'react';
 import { HiPlus } from 'react-icons/hi';
 import ProjectCards from './ProjectCards';
+import Analysis from './Analysis';
 
 const DashBoard = () => {
     return (
@@ -24,6 +25,7 @@ const DashBoard = () => {
       </div>
     </div>
     <ProjectCards></ProjectCards>
+    <Analysis></Analysis>
         </div>
         
     );

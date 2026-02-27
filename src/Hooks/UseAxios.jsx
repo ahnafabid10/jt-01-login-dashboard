@@ -5,8 +5,8 @@ const axiosInstance = axios.create({
 });
 
 
-const UseAxiosSecure = () => {
+const UseAxios = () => {
     return axiosInstance;
 };
 
-export default UseAxiosSecure;
+export default UseAxios;
