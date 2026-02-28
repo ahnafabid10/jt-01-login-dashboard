@@ -23,11 +23,11 @@ const Projects = () => {
           New
         </button>
       </div>
-      <ul className="space-y-3">
+      <ul className="space-y-4">
         {projectData.map((project) => (
           <li
             key={project.id}
-            className="flex items-center gap-3 cursor-pointer rounded-xl px-2 py-2 transition-colors"
+            className="flex items-center gap-3 cursor-pointer rounded-xl px-2 py-3 transition-colors"
           >
             <div>
               

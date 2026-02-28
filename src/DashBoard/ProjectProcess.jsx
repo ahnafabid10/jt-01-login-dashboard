@@ -19,10 +19,10 @@ const ProjectProcess = () => {
   }, []);
 
   return (
-    <div className='bg-white p-5 rounded-2xl'>
-      <h2 className="text-lg font-semibold text-left text-black mb-2">Members</h2>
+    <div className='bg-white p-6 rounded-2xl'>
+      <h2 className="text-lg font-bold text-left text-black mb-10">Members</h2>
       <div className='  items-center flex flex-col gap-5'>
-            <PieChart width={210} height={120}>
+            <PieChart width={210} height={150}>
         <Pie
           stroke="none"
           dataKey="value"
@@ -34,11 +34,35 @@ const ProjectProcess = () => {
           innerRadius={50}
           outerRadius={100}
         />
-        <Tooltip />
+        <Tooltip 
+        formatter={(value, name) => {
+      const total = analyticsData.reduce((acc, item) => acc + item.value, 0);
+      const percent = ((value / total) * 100).toFixed(1);
+      return [`${percent}%`, name];
+    }}
+        
+        />
+        {analyticsData.length > 0 && (
+            <text
+              x={105}
+              y={100}
+              textAnchor="middle"
+              dominantBaseline="middle"
+              className="text-2xl font-bold fill-[#22c55e]"
+            >
+              {(() => {
+                const total = analyticsData.reduce((acc, item) => acc + item.value, 0);
+                const active = analyticsData.find(item => item.name === 'Active Users')?.value || 0;
+                const percent = ((active / total) * 100).toFixed(1);
+                return `${percent}%`;
+              })()}
+              
+            </text>
+          )}
       </PieChart>
       <div className="flex gap-5">
-        <p>Total Users</p>
-        <p>Active Users</p>
+        <p className='text-[#14532d] font-bold'><span className='bg-'>● </span>Total Users</p>
+        <p className='text-[#22c55e] font-bold'>Active Users</p>
       </div>
       </div>
 

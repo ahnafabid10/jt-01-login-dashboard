@@ -4,7 +4,7 @@ import { FiPause, FiSquare } from 'react-icons/fi';
 const TimeTracker = () => {
   return (
     <div
-      className="relative rounded-2xl overflow-hidden p-4 flex flex-col gap-2 w-48 shadow-2xl"
+      className="relative rounded-2xl  p-4 flex flex-col w-full "
       style={{
         background: 'linear-gradient(135deg, #1a3a2a 0%, #0d2118 40%, #162e20 100%)',
       }}
