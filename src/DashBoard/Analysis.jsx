@@ -25,19 +25,20 @@ const Analysis = ({isAnimationActive = true,
     },[])
 
     return (
-        <div>
-            <BarChart
-    style={{ width: '100%', maxWidth: '700px', maxHeight: '70vh', aspectRatio: 1.618 }}
-    responsive
-    data={analyticsData}
-    id="recharts-ranged-stacked-bar-chart"
-    margin={{
-      top: 20,
-      right: 20,
-      bottom: 20,
-      left: 20,
-    }}
-  >
+        <div className='bg-white p-5 max-w-full rounded-2xl'>
+          <div>
+            <h2 className="text-2xl font-bold text-black mb-4">Project Analytics</h2>
+          </div>
+    <BarChart
+width={650} height={220}
+  data={analyticsData}
+  margin={{
+    top: 20,
+    right: 20,
+    bottom: 20,
+    left: 20,
+  }}
+>
     <XAxis dataKey="date" />
     <YAxis width="auto" />
     <Tooltip defaultIndex={defaultIndex} />
@@ -45,23 +46,23 @@ const Analysis = ({isAnimationActive = true,
       <Bar
         dataKey="views"
         maxBarSize={50}
-        fill="#8884d8"
+        fill="#14532d"
         isAnimationActive={isAnimationActive}
-        activeBar={{ fill: '#5550bd' }}
+        activeBar={{ fill: '#14532d' }}
       />
       <Bar
         dataKey="clicks"
         maxBarSize={50}
-        fill="#8884d8"
+        fill="#16a34a"
         isAnimationActive={isAnimationActive}
-        activeBar={{ fill: '#5550bd' }}
+        activeBar={{ fill: '#16a34a' }}
       />
       <Bar
         dataKey="conversions"
         maxBarSize={50}
-        fill="#8884d8"
+        fill="#22c55e"
         isAnimationActive={isAnimationActive}
-        activeBar={{ fill: '#5550bd' }}
+        activeBar={{ fill: '#22c55e' }}
       />
     </BarStack>
   </BarChart>

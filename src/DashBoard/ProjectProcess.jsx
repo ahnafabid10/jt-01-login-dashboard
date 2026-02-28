@@ -12,15 +12,17 @@ const ProjectProcess = () => {
         console.log(res.data);
         const { totalUsers, activeUsers} = res.data;
         setAnalyticsData([
-          { name: "Total Users", value: totalUsers, fill: "#6366f1" },
+          { name: "Total Users", value: totalUsers, fill: "#14532d" },
           { name: "Active Users", value: activeUsers, fill: "#22c55e" },
         ]);
       })
   }, []);
 
   return (
-    <div className=''>
-      <PieChart width={210} height={120}>
+    <div className='bg-white p-5 rounded-2xl'>
+      <h2 className="text-lg font-semibold text-left text-black mb-2">Members</h2>
+      <div className='  items-center flex flex-col gap-5'>
+            <PieChart width={210} height={120}>
         <Pie
           stroke="none"
           dataKey="value"
@@ -38,6 +40,8 @@ const ProjectProcess = () => {
         <p>Total Users</p>
         <p>Active Users</p>
       </div>
+      </div>
+
     </div>
   );
 };

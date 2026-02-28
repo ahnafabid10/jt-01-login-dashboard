@@ -10,7 +10,7 @@ const Team = () => {
         axiosSecure.get('/api/users')
         .then(res => {
             console.log(res.data)
-            setUserData(res.data)
+            setUserData(res.data.slice(0,3))
         })
     },[])
     
@@ -18,15 +18,15 @@ const Team = () => {
         <div>
     <div className="flex">
       <div
-        className="card bg-base-100 shadow-xl w-full max-w-md"
+        className="card bg-white w-full"
         style={{ fontFamily: "'DM Sans', 'Segoe UI', sans-serif" }}
       >
-        <div className="card-body p-6 gap-5">
+        <div className="card-body p-4 gap-5">
           <div className="flex items-center justify-between">
-            <h2 className="text-xl font-bold tracking-tight text-base-content">
+            <h2 className="text-xl font-bold tracking-tight text-black">
               Team Collaboration
             </h2>
-            <button className="btn btn-sm btn-outline gap-1 rounded-full border-base-300 text-sm font-medium hover:bg-primary hover:text-primary-content hover:border-primary transition-all duration-200">
+            <button className="btn border-2 gap-1 rounded-full border-[#14532d] text-sm text-[#14532d] bg-white font-medium transition-all duration-200">
               <FiPlus className="text-base" />
               Add Member
             </button>
@@ -36,7 +36,7 @@ const Team = () => {
             {userData.map((member) => (
               <li
                 key={member.id}
-                className={`flex items-center gap-3 p-3 rounded-2xl transition-all duration-200 cursor-pointer  hover:bg-base-200 bg-transparent`}
+                className={`flex items-center gap-3 p-3 rounded-2xl transition-all duration-200 cursor-pointer bg-transparent`}
               >
 
                 <div className="avatar">
@@ -46,19 +46,19 @@ const Team = () => {
                 </div>
 
                 <div className="flex-1 min-w-0">
-                  <p className="text-sm font-semibold text-base-content leading-tight truncate">
+                  <p className="text-sm font-semibold text-black leading-tight truncate">
                     {member.name}
                   </p>
-                  <p className="text-xs text-base-content/50 truncate flex items-center gap-1 mt-0.5">
+                  <p className="text-xs text-gray-500 truncate flex items-center gap-1 mt-0.5">
                     {member.email}
                   </p>
-                  <p className="text-xs text-base-content/50 truncate flex items-center gap-1 mt-0.5">
+                  {/* <p className="text-xs text-gray-500 truncate flex items-center gap-1 mt-0.5">
                     Join Date: {member.joinDate}
-                  </p>
+                  </p> */}
                 </div>
 
                 <span
-                  className={`badge badge-sm ${member.status === "active" ? "badge badge-soft badge-success" : "badge badge-soft badge-warning"} font-medium whitespace-nowrap`}
+                  className={`badge badge-sm ${member.status === "active" ? "badge badge-success" : "badge badge-warning"} font-medium whitespace-nowrap`}
                 >
                   {member.status}
                 </span>

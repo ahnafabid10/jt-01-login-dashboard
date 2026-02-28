@@ -15,10 +15,10 @@ const Projects = () => {
     },[])
     return (
         <div>
-            <div className="card bg-base-100 shadow-md w-72 p-4 rounded-2xl">
+            <div className="card bg-white  w-full p-4 rounded-2xl">
       <div className="flex items-center justify-between mb-4">
-        <h2 className="font-bold text-base-content text-base">Project</h2>
-        <button className="btn btn-sm btn-ghost border border-base-300 rounded-full gap-1 text-xs font-medium">
+        <h2 className="font-bold text-black text-xl">Project Price</h2>
+        <button className="btn border-2 border-[#14532d] rounded-full gap-1 bg-white text-[#14532d] font-medium">
           <FiPlus size={14} />
           New
         </button>
@@ -27,17 +27,17 @@ const Projects = () => {
         {projectData.map((project) => (
           <li
             key={project.id}
-            className="flex items-center gap-3 cursor-pointer hover:bg-base-200 rounded-xl px-2 py-1 transition-colors"
+            className="flex items-center gap-3 cursor-pointer rounded-xl px-2 py-2 transition-colors"
           >
             <div>
               
-              <p className="text-sm font-semibold text-base-content leading-tight">
+              <p className="text-lg font-semibold text-gray-800  leading-tight">
                 {project.name}
               </p>
-              <p className="text-xs text-base-content/40 mt-0.5">
+              <p className="text-xs text-gray-500 mt-0.5">
                Category: {project.category}  
               </p>
-              <p className="text-xs text-base-content/40 mt-0.5">
+              <p className="text-xs text-gray-500 mt-0.5">
                 Price: ${project.price} & Sales: {project.sales}
               </p>
               
