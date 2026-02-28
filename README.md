@@ -1,16 +1,63 @@
-# React + Vite
+# Login Dashboard App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive React application featuring a **Login Page** and a **Dashboard Page**. The dashboard fetches and displays data dynamically, providing a sleek interface for task management.
 
-Currently, two official plugins are available:
+Live link: https://jt-login.netlify.app/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## React Compiler
+- **Login Page**
+  - User authentication with email and password
+  - Form validation
+  - Redirect to dashboard upon successful login
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Dashboard Page**
+  - Dynamic charts and data visualization using Recharts
+  - Responsive card layouts for projects, reminders, and analytics
+  - Interactive UI elements with icons and animations
 
-## Expanding the ESLint configuration
+- **Routing**
+  - Private routes to protect dashboard access
+  - Smooth navigation between pages
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Tech Stack
+
+- **Frontend Framework:** React 19  
+- **Styling:** Tailwind CSS 4 + DaisyUI  
+- **Routing:** React Router 7  
+- **Charts & Graphs:** Recharts 3  
+- **HTTP Client:** Axios  
+- **Build Tool:** Vite  
+- **Linting:** ESLint with React Hooks plugin  
+
+## Installation
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/yourusername/login-dashboard-app.git
+cd login-dashboard-app
+```
+2. Install dependencies:
+```
+npm install
+```
+3. Run the development server:
+```
+npm run dev
+```
+## API Integration
+
+The app interacts with a REST API to:
+
+Authenticate users (/api/login)
+
+Fetch analytics and project data for the dashboard
+
+Example request for login:
+```
+{
+  "email": "user1@example.com",
+  "password": "password123"
+}
+```
