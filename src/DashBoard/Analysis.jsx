@@ -1,4 +1,4 @@
-import { BarChart, XAxis, YAxis, Tooltip, Bar, BarStack} from 'recharts';
+import { BarChart, XAxis, YAxis, Tooltip, Bar, BarStack, ResponsiveContainer} from 'recharts';
 import React, { useEffect, useState } from 'react';
 import UseAxios from '../Hooks/UseAxios';
 
@@ -29,6 +29,7 @@ const Analysis = ({isAnimationActive = true,
           <div>
             <h2 className="text-2xl font-bold text-black mb-4">Project Analytics</h2>
           </div>
+           <ResponsiveContainer width="100%" height={220}>
     <BarChart
 width={650} height={220}
   data={analyticsData}
@@ -66,6 +67,7 @@ width={650} height={220}
       />
     </BarStack>
   </BarChart>
+  </ResponsiveContainer>
         </div>
     );
 };

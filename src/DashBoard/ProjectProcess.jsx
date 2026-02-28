@@ -34,14 +34,7 @@ const ProjectProcess = () => {
           innerRadius={50}
           outerRadius={100}
         />
-        <Tooltip 
-        formatter={(value, name) => {
-      const total = analyticsData.reduce((acc, item) => acc + item.value, 0);
-      const percent = ((value / total) * 100).toFixed(1);
-      return [`${percent}%`, name];
-    }}
-        
-        />
+        <Tooltip/>
         {analyticsData.length > 0 && (
             <text
               x={105}
@@ -61,8 +54,8 @@ const ProjectProcess = () => {
           )}
       </PieChart>
       <div className="flex gap-5">
-        <p className='text-[#14532d] font-bold'><span className='bg-'>● </span>Total Users</p>
-        <p className='text-[#22c55e] font-bold'>Active Users</p>
+        <p className='text-[#14532d] font-bold'>● Total Users</p>
+        <p className='text-[#22c55e] font-bold'>● Active Users</p>
       </div>
       </div>
 
